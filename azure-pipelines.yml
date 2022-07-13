@@ -1,5 +1,7 @@
 trigger:
 - main
+variables:
+  TEST1: 'idetozyml'
 
 pool:
   vmImage: ubuntu-latest
@@ -9,6 +11,12 @@ steps:
   inputs:
     versionSpec: '16.x'
   displayName: 'Install Node.js'
+
+- task: qetza.replacetokens.replacetokens-task.replacetokens@3
+  displayName: 'Replace tokens'
+  inputs:
+    targetFiles: |
+      **/environment.ts
 
 - script: |
     npm install -g @angular/cli
