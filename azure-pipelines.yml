@@ -14,12 +14,14 @@ steps:
   displayName: 'Install Node.js'
 
 - task: FileTransform@1
+  condition: succeededOrFailed()
   displayName: 'Replace tokens'
   inputs:
     fileType: 'json'
     TargetFiles: '**/tests.json'
 
 - task: FileTransform@1
+  condition: succeededOrFailed()
   inputs:
     folderPath: '$(System.DefaultWorkingDirectory)/**/*.zip'
     fileType: 'json'
