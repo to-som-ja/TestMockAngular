@@ -1,0 +1,27 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '16.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install -g @angular/cli
+    npm install
+    npm run test-headless
+  displayName: 'npm install and test'
+
+
+- task: PublishTestResults@2
+  displayName: 'Publish Angular test results'
+  condition: succeededOrFailed()
+  inputs:
+    searchFolder: $(System.DefaultWorkingDirectory)/junit
+    testRunTitle: Angular
+    testResultsFormat: JUnit
+    testResultsFiles: "**/TESTS*.xml"
