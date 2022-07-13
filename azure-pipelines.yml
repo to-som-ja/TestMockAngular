@@ -24,4 +24,4 @@ steps:
     searchFolder: $(System.DefaultWorkingDirectory)/junit
     testRunTitle: Angular
     testResultsFormat: JUnit
-    testResultsFiles: "**/TESTS*.xml"
+    testResultsFiles: "**/*.xml"
