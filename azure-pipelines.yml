@@ -13,19 +13,20 @@ steps:
     versionSpec: '16.x'
   displayName: 'Install Node.js'
 
-- task: FileTransform@1
-  condition: succeededOrFailed()
-  displayName: 'Replace tokens'
+- task: replacetokens@5
   inputs:
-    fileType: 'json'
-    TargetFiles: '**/tests.json'
+    targetFiles: '**/environment.ts'
+    encoding: 'auto'
+    tokenPattern: 'default'
+    writeBOM: true
+    actionOnMissing: 'warn'
+    keepToken: false
+    actionOnNoFiles: 'continue'
+    enableTransforms: false
+    enableRecursion: false
+    useLegacyPattern: false
+    enableTelemetry: true
 
-- task: FileTransform@1
-  condition: succeededOrFailed()
-  inputs:
-    folderPath: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    fileType: 'json'
-    targetFiles: '**/tests.json'
 
 - script: |
     npm install -g @angular/cli
