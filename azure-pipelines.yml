@@ -3,9 +3,9 @@ trigger:
 
 variables:
   TEST1: '100'
-  TEST1: '50'
-  TEST1: '50'
-  TEST1: '50'
+  TEST2: '50'
+  TEST3: '50'
+  TEST4: '50'
 
 pool:
   vmImage: ubuntu-latest
