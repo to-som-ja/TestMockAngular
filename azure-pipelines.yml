@@ -1,5 +1,6 @@
 trigger:
 - main
+
 variables:
   TEST1: 'idetozyml'
 
@@ -12,10 +13,10 @@ steps:
     versionSpec: '16.x'
   displayName: 'Install Node.js'
 
-- task: FileTransform@1
+- task: FileTransform@2
   displayName: 'Replace tokens'
   inputs:
-    targetFiles: '**/environment.ts'
+    jsonTargetFiles: '**/tests.json'
 
 - script: |
     npm install -g @angular/cli
