@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome Headless 103.0.5060.114 (Windows 10)" package="" timestamp="2022-07-13T09:20:05" id="0" hostname="DESKTOP-15QUBI0" tests="1" errors="0" failures="1" time="0.046">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/103.0.5060.114 Safari/537.36"/>
+  </properties>
+  <testcase name="AppComponent fail test" time="0.046" classname="Chrome_Headless_103_0_5060_114_(Windows_10).AppComponent">
+    <failure type="">Expected false to be truthy.
+    at &lt;Jasmine&gt;
+    at UserContext.apply (src/app/app.component.spec.ts:19:19)
+    at _ZoneDelegate.invoke (node_modules/zone.js/fesm2015/zone.js:372:26)
+    at ProxyZoneSpec.onInvoke (node_modules/zone.js/fesm2015/zone-testing.js:287:39)
+</failure>
+  </testcase>
+  <system-out>
+    <![CDATA[Chrome Headless 103.0.5060.114 (Windows 10) LOG: 'ahoj'
+,Chrome Headless 103.0.5060.114 (Windows 10) LOG: '#{TEST1}#'
+,Chrome Headless 103.0.5060.114 (Windows 10) LOG: '#{TEST1}#'
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
