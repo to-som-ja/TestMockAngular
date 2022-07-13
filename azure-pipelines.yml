@@ -2,7 +2,10 @@ trigger:
 - main
 
 variables:
-  TEST1: 'idetozyml'
+  TEST1: '100'
+  TEST1: '50'
+  TEST1: '50'
+  TEST1: '50'
 
 pool:
   vmImage: ubuntu-latest
