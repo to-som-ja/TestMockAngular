@@ -13,10 +13,8 @@ steps:
   displayName: 'Install Node.js'
 
 - task: FileTransform@1
-  displayName: 'Replace tokens'
   inputs:
-    targetFiles: |
-      **/environment.ts
+    folderPath: '$(System.DefaultWorkingDirectory)/**/*.zip'
 
 - script: |
     npm install -g @angular/cli
